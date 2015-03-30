@@ -51,3 +51,10 @@ Scenario: Items over 10 lb always cost $20 each to ship
   And I add a "50" dollar "100" lb item named "couch"
   Then My subtotal should be "140" dollars
   And My total should be "160" dollars
+
+Scenario: Cart item count
+    Given I have an empty cart
+    And I add a "80" dollar "2" lb item named "dress"
+    And I add a "10" dollar "1" lb item named "tee"
+    And I add a "50" dollar "100" lb item named "couch"
+    Then My cart should have "3" items
